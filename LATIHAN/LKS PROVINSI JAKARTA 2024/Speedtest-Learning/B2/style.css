@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+  }
+  
+  .rating-container {
+    position: relative;
+    width: 250px; /* Adjust width based on your stars.png layout */
+    height: 50px;
+    cursor: pointer;
+  }
+  
+  .stars-bg,
+  .stars-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./stars.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .stars-fill {
+    background-color: #E5BA41;
+    mix-blend-mode: multiply;
+  
+    -webkit-mask-image: url('./stars.png');
+    -webkit-mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    mask-image: url('./stars.png');
+    mask-size: cover;
+    mask-repeat: no-repeat;
+  
+    width: 0%;
+    pointer-events: none;
+    transition: width 0.2s ease;
+  }
+  

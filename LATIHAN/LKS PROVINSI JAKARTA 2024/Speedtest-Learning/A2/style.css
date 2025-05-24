@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    transition: all ease-in-out 0.3s;
+}
+
+.navbar {
+    display: flex;
+    height: 11vh;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #1686d5;
+    color: white;
+    padding: 0 85px;
+}
+
+.vacation {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 50px 30px;
+    padding-bottom: 30px;
+}
+
+.vacation-container {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    min-height: 380px;
+    padding: 20px;
+    border: 3px solid #1686d5;
+    border-radius: 8px;
+    gap: 10px;
+}
+
+.vacation-container img {
+    border-radius: 4px;
+}
+
+.vacation-container h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #1686d5;
+}
+
+.vacation-container p {
+    font-size: 12px;
+    text-align: justify;
+}
+
+.vacation-container button {
+    color: white;
+    font-family: 'poppins';
+    width: 100px;
+    height: 40px;
+    font-weight: 600;
+    background-color: #1686d5;
+    border-radius: 6px;
+    font-size: 12px;
+    border: 2px solid #1686d5;
+    outline: none;
+    cursor: pointer;
+    margin: 5px 0;
+    transition: all ease-in-out 0.3s;
+}
+
+.vacation-container button:hover {
+    background-color: transparent;
+    color: #1686d5;
+}
+
+.vacation-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.vacation-preview p span {
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.vacation-preview p {
+    font-weight: 600;
+    color: #1686d5;
+}
+
+.vacation-desc {
+    display: none;
+}
+
+.vacation-desc.active {
+    display: block;
+}

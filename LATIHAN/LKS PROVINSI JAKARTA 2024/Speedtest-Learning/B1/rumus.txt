@@ -1,0 +1,29 @@
+    const btn = document.querySelector('.particle-btn');
+    btn.addEventListener('click', () => {
+        const rect = btn.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        for (let index = 0; index < 12; index++) {
+            const circle = document.createElement('div');
+            circle.classList.add('circle');
+            document.body.appendChild(circle);
+
+            circle.style.left = `${centerX}px`;
+            circle.style.top = `${centerY}px`;
+
+            const angle = (Math.PI * 2) * (index / 12);
+            const radius = 40 + Math.random() * 100;
+            const x = Math.cos(angle) * radius;
+            const y = Math.sin(angle) * radius;
+
+            requestAnimationFrame(() => {
+                circle.style.transform = `translate(${x}px, ${y}px)`;
+                circle.style.opacity = 0;
+            });
+
+            setTimeout(() => {
+                circle.remove();
+            }, 2000);
+        }
+    });

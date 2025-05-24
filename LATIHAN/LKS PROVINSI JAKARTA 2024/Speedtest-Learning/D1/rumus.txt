@@ -1,0 +1,24 @@
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const dataFromPHP = <?php echo json_encode($data); ?>;
+
+  const labels = dataFromPHP.map(item => item.name);
+  const values = dataFromPHP.map(item => item.value);
+
+  const colors = [
+    '#FF6384', '#9966FF', '#36A2EB', '#FFCE56', '#4BC0C0', '#F67019', '#00A950',
+    '#C9CBCF', '#B3E283', '#FF9F40'
+  ];
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Jumlah (nilai acak)',
+        data: values,
+        backgroundColor: labels.map((_, i) => colors[i % colors.length]),
+        borderColor: '#000',
+        borderWidth: 1
+      }]
+    }
+  });
