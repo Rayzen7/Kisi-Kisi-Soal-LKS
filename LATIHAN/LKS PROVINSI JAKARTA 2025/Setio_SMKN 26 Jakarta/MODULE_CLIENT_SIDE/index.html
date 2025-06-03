@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Junk</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./source/ships-09.png">
 </head>
 
 <body>
@@ -74,7 +75,7 @@
             <p id="navScore">Score: </p>
             <p id="navTime">Time: </p>
         </div>
-        <canvas id="game-canvas" width="550" height="350"></canvas>
+        <canvas id="game-canvas" width="950" height="450"></canvas>
         <div class="game-btn">
             <button id="pauseBtn">Pause</button>
             <button id="resetBtn">Play Again</button>
@@ -94,6 +95,9 @@
         <img id="smallObjectImg" src="./source/objects-06.png" alt="">
         <img id="bigObjectImg" src="./source/objects-04.png" alt="">
         <img id="bgImg" src="./design/background.png" alt="">
+        <audio src="./source/coint.mp3" id="audioCoint"></audio>
+        <audio src="./source/gameover.mp3" id="audioGameOver"></audio>
+        <audio src="./source/success.mp3" id="audioSuccess"></audio>
      </div>
 
     <script src="./main.js"></script>

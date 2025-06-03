@@ -24,6 +24,9 @@ const playerImg = document.getElementById('playerImg');
 const smallObjectImg = document.getElementById('smallObjectImg');
 const bigObjectImg = document.getElementById('bigObjectImg');
 const bgImg = document.getElementById('bgImg');
+const audioGameOver = document.getElementById('audioGameOver');
+const audioCoint = document.getElementById('audioCoint');
+const audioSuccess = document.getElementById('audioSuccess');
 
 // Global state
 let globalGameScore = 0;
@@ -163,6 +166,7 @@ function gameTime() {
         }
 
         if (globalGameTime === 0) {
+            audioGameOver.play();
             globalGamePause = true;
             clearInterval(timer);
             notifPage.classList.add('active');
@@ -272,6 +276,7 @@ function gameCheckPointCollusion() {
     for (let index = 0; index < globalBigObjectProp.length; index++) {
         const bigObject = globalBigObjectProp[index];
         if (gameCollusion(playerProp, bigObject)) {
+            audioCoint.play();
             globalGameScore+=20;
             globalBigObjectProp.splice(index, 1);
         }
@@ -280,6 +285,7 @@ function gameCheckPointCollusion() {
     for (let index = 0; index < globalSmallObjectProp.length; index++) {
         const smallObject = globalSmallObjectProp[index];
         if (gameCollusion(playerProp, smallObject)) {
+            audioCoint.play();
             globalGameScore+=5;
             globalSmallObjectProp.splice(index, 1);
         }
@@ -288,6 +294,7 @@ function gameCheckPointCollusion() {
 
 function gameCheckPlayerEnemyCollusion() {
     if (gameCollusion(playerProp, enemyProp)) {
+        audioGameOver.play();
         globalGamePause = true;
         notifPage.classList.add('active');
         notifHead.textContent = 'Game Over';
@@ -300,7 +307,7 @@ const playerProp = {
     x: 50,
     y: 50,
     size: 50,
-    speed: 4,
+    speed: 5,
     angle: Math.PI / 2
 }
 
@@ -376,6 +383,7 @@ function gameWin() {
     const total = countBigObject + countSmallObject;
 
     if (globalGameScore === total) {
+        audioSuccess.play();
         globalGamePause = true;
         notifPage.classList.add('active');
         notifHead.textContent = 'Victory';
