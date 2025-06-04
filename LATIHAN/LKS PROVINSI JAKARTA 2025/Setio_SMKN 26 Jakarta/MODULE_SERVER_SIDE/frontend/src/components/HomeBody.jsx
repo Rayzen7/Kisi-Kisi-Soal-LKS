@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import { useEffect, useState } from 'react'
 import API from '../utils/API'
@@ -103,7 +104,9 @@ const HomeBody = () => {
                   <h4 className="section-title text-muted">My Installment Cars</h4>
                 </div>
                 <div className="col-md-4">
-                  <a href="" className="btn btn-primary btn-lg btn-block">+ Add Installment Cars</a>
+                  <Link to="/listcar">
+                    <p className="btn btn-primary btn-lg btn-block">+ Add Installment Cars</p>
+                  </Link>
                 </div>
               </div>
             </div>

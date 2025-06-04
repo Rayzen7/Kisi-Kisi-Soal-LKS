@@ -66,6 +66,7 @@ class InstallmentController extends Controller
                         return [
                             'month' => $item->month,
                             'description' => $item->description,
+                            'nominal' => $item->nominal,
                         ];
                     }),
                 ];
